@@ -24,6 +24,11 @@ Covers preflop ranges. It expands poker shorthand like `"22+, ATs+, KQo"` into t
 
 Check it out [here](docs/module-4-ranges.md).
 
+### Module 5:
+Covers pot odds and decision grading. It works out how much equity a call needs to break even, converts that into expected value in big blinds, and grades a decision against it. Preflop decisions are graded straight off the charts instead — including hands that are played more than one way, where two actions are both correct.
+
+Check it out [here](docs/module-5-grading.md).
+
 
 ### How to run"
 python check_cards.py
@@ -35,5 +40,6 @@ python check_equity.py
 2. Rules of the game (Hand Evaluation) ✅
 3. Equity ✅
 4. Ranges ✅
-5. Pot Odds & Grading
-4. Spot Generator
+5. Pot Odds & Grading ✅
+6. Villian Response & EV
+7. Spot Generator
