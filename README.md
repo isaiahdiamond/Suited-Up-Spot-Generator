@@ -41,5 +41,5 @@ python check_equity.py
 3. Equity ✅
 4. Ranges ✅
 5. Pot Odds & Grading ✅
-6. Villian Response & EV
-7. Spot Generator
+6. Spot Generator
+7. Villian Response & EV

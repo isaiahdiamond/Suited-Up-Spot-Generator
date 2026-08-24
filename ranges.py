@@ -92,5 +92,5 @@ def get_chart(position:str, action:str):
     
     if position == 'BB' and action == 'rfi':
         return 'No BB chart for this action.'
-    return CHARTS[action][position]
+    return CHARTS[action].get(position)
 
