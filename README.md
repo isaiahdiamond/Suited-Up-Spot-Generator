@@ -29,11 +29,32 @@ Covers pot odds and decision grading. It works out how much equity a call needs 
 
 Check it out [here](docs/module-5-grading.md).
 
+### Module 6:
+Covers spot generation. It deals a table, walks the preflop action seat by
+seat with each opponent's decision coming from the same charts the trainer
+grades against, and stops when the action reaches you — that's a spot. It
+then carries on past your turn, deals the flop, and lets someone bet, which
+gives the flop trainer its situations. Anything the engine can't grade gets
+thrown away rather than stored.
+
+Check it out [here](docs/module-6-spot-generator.md).
+
+
+### Module 7:
+Covers what happens after you bet. It works out how often an opponent has to
+keep playing to stop a bet from printing money, which of his hands those are,
+and what betting or raising is worth against them. That's what lets the flop
+trainer grade aggression instead of only call-or-fold.
+
+Check it out [here](docs/module-7-villain-response.md).
+
 
 ### How to run"
 python check_cards.py
 python check_evaluator.py
 python check_equity.py
+python check_ranges.py
+python check_grading.py
 
 ### Modules:
 1. Cards, Combinations, & Removal ✅
@@ -41,5 +62,5 @@ python check_equity.py
 3. Equity ✅
 4. Ranges ✅
 5. Pot Odds & Grading ✅
-6. Spot Generator
-7. Villian Response & EV
+6. Spot Generator ✅
+7. Villian Response & EV ✅
