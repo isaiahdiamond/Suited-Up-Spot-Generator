@@ -50,11 +50,7 @@ Check it out [here](docs/module-7-villain-response.md).
 
 
 ### How to run"
-python check_cards.py
-python check_evaluator.py
-python check_equity.py
-python check_ranges.py
-python check_grading.py
+You can clone the repo to your git. Go to `preflop_gen.py` or `flop_gen.py.` Enter n amount of spots you want to generate.
 
 ### Modules:
 1. Cards, Combinations, & Removal ✅
