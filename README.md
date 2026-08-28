@@ -50,7 +50,7 @@ Check it out [here](docs/module-7-villain-response.md).
 
 
 ### How to run"
-You can clone the repo to your git. Go to `preflop_gen.py` or `flop_gen.py.` Enter n amount of spots you want to generate.
+You can clone the repo to your git. Go to `preflop_gen.py` or `flop_gen.py.` Pass n amount of spots you want to generate, as a argument.
 
 ### Modules:
 1. Cards, Combinations, & Removal ✅
