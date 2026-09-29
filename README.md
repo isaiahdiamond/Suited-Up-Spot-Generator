@@ -1,4 +1,4 @@
-# The Poker Trainer Engine 🃏
+# Suited Up | The Poker Trainer's Engine 🃏
 This is the math engine behind my mobile app, Poker Trainer - SuitedUp. It generates random poker scenarios and grades the mathematically optimal decision a player should take.
 
 This code and repo is not AI generated, and all math is verified by hand and 3rd party checks.
