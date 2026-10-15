@@ -4,6 +4,8 @@ This is the math engine behind SuitedUp, my mobile poker trainer. It deals rando
 
 I wrote the code myself. The math is checked by hand and against third-party tools.
 
+<img width="1180" height="612" alt="Screenshot 2026-10-15 at 12 15 11 PM" src="https://github.com/user-attachments/assets/36dedd86-604a-4bd1-a8fb-276b25ddc335" />
+
 ## What it does
 
 1. [Cards and combinations](docs/module-1-cards.md): builds the deck and counts hand combinations, including card removal.
