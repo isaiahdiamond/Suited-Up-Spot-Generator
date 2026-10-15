@@ -1,62 +1,32 @@
-# Suited Up | The Poker Trainer's Engine 🃏
-This is the math engine behind my mobile app, Poker Trainer - SuitedUp. It generates random poker scenarios and grades the mathematically optimal decision a player should take.
+# SuitedUp engine
 
-This code and repo is not AI generated, and all math is verified by hand and 3rd party checks.
+This is the math engine behind SuitedUp, my mobile poker trainer. It deals random poker spots and works out the correct decision for each one, so the app can grade your play instantly.
 
-### Module 1:
-Covers generating a deck, all possible hand combinations, card removal, and combinatorics.
+I wrote the code myself. The math is checked by hand and against third-party tools.
 
-Check it out [here](docs/module-1-cards.md).
+## What it does
 
-### Module 2:
-Covers turning random cards into the game of poker. It turns 7 random cards into poker ranks ie: Flush, Two-Pair, etc.
+1. [Cards and combinations](docs/module-1-cards.md): builds the deck and counts hand combinations, including card removal.
+2. [Hand evaluation](docs/module-2-evaluator.md): turns 7 cards into a poker hand like a flush or two pair.
+3. [Equity](docs/module-3-equity.md): calculates how often your hand wins against an opponent's range on a given flop, exactly or by simulation.
+4. [Ranges](docs/module-4-ranges.md): expands shorthand like `22+, ATs+, KQo` into real hands and looks up the right preflop chart for each position.
+5. [Pot odds and grading](docs/module-5-grading.md): works out the equity a call needs, converts it to expected value in big blinds, and grades the decision. Preflop spots are graded from the charts, and some hands have two correct plays.
+6. [Spot generation](docs/module-6-spot-generator.md): deals a table and plays each opponent from the same charts until the action reaches you. For flop spots it keeps going, deals the flop, and has someone bet. Spots the engine can't grade get thrown out.
+7. [Opponent response](docs/module-7-villain-response.md): works out how often an opponent has to continue against a bet, which hands he continues with, and what betting or raising is worth. This lets the flop trainer grade bets and raises as well as calls and folds.
 
-Check it out [here](docs/module-2-evaluator.md).
+## Run it yourself
 
-### Module 3:
-Covers calculating exact and estimated equity in a specific poker hand. It takes a flop, the hero's cards, and the villain's range to calculate the hero's equity.
-It serves as the foundational piece for grading mathematically optimal decisions in the game.
+Clone the repo and install the dependencies:
 
-Check it out [here](docs/module-3-equity.md).
+```bash
+git clone https://github.com/isaiahdiamond/Suited-Up-Spot-Generator.git
+cd Suited-Up-Spot-Generator
+pip install -r requirements.txt
+```
 
-### Module 4:
-Covers preflop ranges. It expands poker shorthand like `"22+, ATs+, KQo"` into the actual hands it describes, converts those into card combinations, and looks up the right preflop chart for a given position and action. This is what feeds villain's range into the equity engine, and what the preflop trainer grades against.
+Then pass the number of spots you want:
 
-Check it out [here](docs/module-4-ranges.md).
-
-### Module 5:
-Covers pot odds and decision grading. It works out how much equity a call needs to break even, converts that into expected value in big blinds, and grades a decision against it. Preflop decisions are graded straight off the charts instead — including hands that are played more than one way, where two actions are both correct.
-
-Check it out [here](docs/module-5-grading.md).
-
-### Module 6:
-Covers spot generation. It deals a table, walks the preflop action seat by
-seat with each opponent's decision coming from the same charts the trainer
-grades against, and stops when the action reaches you — that's a spot. It
-then carries on past your turn, deals the flop, and lets someone bet, which
-gives the flop trainer its situations. Anything the engine can't grade gets
-thrown away rather than stored.
-
-Check it out [here](docs/module-6-spot-generator.md).
-
-
-### Module 7:
-Covers what happens after you bet. It works out how often an opponent has to
-keep playing to stop a bet from printing money, which of his hands those are,
-and what betting or raising is worth against them. That's what lets the flop
-trainer grade aggression instead of only call-or-fold.
-
-Check it out [here](docs/module-7-villain-response.md).
-
-
-### How to run"
-You can clone the repo to your git. Go to `preflop_gen.py` or `flop_gen.py.` Pass n amount of spots you want to generate, as a argument.
-
-### Modules:
-1. Cards, Combinations, & Removal ✅
-2. Rules of the game (Hand Evaluation) ✅
-3. Equity ✅
-4. Ranges ✅
-5. Pot Odds & Grading ✅
-6. Spot Generator ✅
-7. Villian Response & EV ✅
+```bash
+python preflop_gen.py 100
+python flop_gen.py 100
+```
